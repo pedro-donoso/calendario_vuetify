@@ -1,14 +1,6 @@
 <template>
   <v-app>
-    <!--<contador :cantidad="cantidad"
-  @aumentar="cantidad++"
-  @reducir="cantidad">
-    </contador>-->
-
-    <h3>Hola me llamo: {{ nombre }}</h3>
-    <h3>Mis apellidos son: {{ apellidos }}</h3>
-    <h3>Mi profesión es: {{ profesion }}</h3>
-    <h3>Vivo en la Ciudad de: {{ ciudad }}</h3>
+   
 
     <contador></contador>
 
@@ -25,6 +17,17 @@
         </v-dialog>
       </v-container>
     </v-content>
+
+
+<div class="container">
+  <h3>Hola me llamo: {{ nombre }}</h3>
+    <h3>Mis apellidos son: {{ apellidos }}</h3>
+    <h3>Mi profesión es: {{ profesion }}</h3>
+    <h3>Vivo en la Ciudad de: {{ ciudad }}</h3>
+</div>
+
+    
+
   </v-app>
 </template>
 
