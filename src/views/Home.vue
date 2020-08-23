@@ -1,5 +1,6 @@
 <template>
   <div class="contador">
+    <h3 class="contador__titulo">Selecciona fecha y consulta valor del dolar: </h3>
     <v-layout :wrap="true">
       <v-flex xs12>
         <v-card>
@@ -18,7 +19,8 @@
       </v-flex>
     </v-layout>
 
-    <h4 class="texto">* NO se dispone de datos de los días sábados y domingos</h4>
+    <h4 class="contador__texto">* NO se dispone de datos de los días sábados y domingos</h4>
+    <h4 class="contador__texto">** El cambio corresponde a Pesos CLP</h4>
   </div>
 </template>
 
@@ -69,7 +71,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.texto {
+
+.contador__titulo{
+  color: #fff;
+  background: blueviolet;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contador__texto {
   color: red;
   text-align: center;
 }
