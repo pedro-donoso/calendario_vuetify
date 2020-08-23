@@ -18,7 +18,7 @@
       </v-flex>
     </v-layout>
 
-<h4>* NO se dispone de datos de los días sábados y domingos</h4>
+<h4 class="texto">* NO se dispone de datos de los días sábados y domingos</h4>
 
   </div>
 </template>
@@ -68,3 +68,9 @@ export default {
 };
 
 </script>
+
+<style lang="scss" scoped>
+.texto{
+  color: red;
+}
+</style>

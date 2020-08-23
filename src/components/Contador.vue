@@ -1,8 +1,9 @@
 <template>
- <div class="container">
+ <div class="container" id="contador">
+<h6>Propiedad Computada</h6>
  <h1>Contador: {{cantidad}}</h1>
- <button @click="aumentar">Aumentar</button>
-  <button @click="reducir">Reducir</button>
+ <v-btn rounded color="blue" @click="aumentar">Aumentar</v-btn> |
+  <v-btn rounded color="error" @click="reducir">Reducir</v-btn>
  </div>
 </template>
 
@@ -30,6 +31,8 @@ computed: {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+#contador{
+    font-family: 'Courier New', Courier, monospace;
+}
 </style>

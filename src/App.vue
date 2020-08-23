@@ -1,10 +1,11 @@
 <template>
   <v-app>
-   
+    <div class="contador">
+          <contador></contador>
+    </div>
 
-    <contador></contador>
 
-    <v-content>
+    <v-content class="calendario">
       <v-container>
         <router-view />
         <v-dialog v-model="loading.estado" hide-overlay persistent width="300">
@@ -18,16 +19,17 @@
       </v-container>
     </v-content>
 
-
-<div class="container">
-  <h3>Hola me llamo: {{ nombre }}</h3>
-    <h3>Mis apellidos son: {{ apellidos }}</h3>
-    <h3>Mi profesión es: {{ profesion }}</h3>
-    <h3>Vivo en la Ciudad de: {{ ciudad }}</h3>
-</div>
-
-    
-
+    <div class="computada">
+   <div class="container">
+      <h3>Hola me llamo: {{ nombre }}</h3>
+      <h3>Mis apellidos son: {{ apellidos }}</h3>
+      <h3>Mi profesión es: {{ profesion }}</h3>
+      <h3>Vivo en la Ciudad de: {{ ciudad }}</h3>
+   </div>
+       
+  
+      
+    </div>
   </v-app>
 </template>
 
@@ -41,32 +43,41 @@ export default {
   components: { Contador },
 
   computed: {
-
     // accede al store
-    nombre(){
-      return this.$store.state.nombre
+    nombre() {
+      return this.$store.state.nombre;
     },
 
-    apellidos(){
-      return this.$store.state.apellidos
+    apellidos() {
+      return this.$store.state.apellidos;
     },
 
-    profesion(){
-      return this.$store.state.profesion
+    profesion() {
+      return this.$store.state.profesion;
     },
 
-    ciudad(){
-  return this.$store.state.ciudad
+    ciudad() {
+      return this.$store.state.ciudad;
     },
 
-    ...mapState(["loading"])
+    ...mapState(["loading"]),
   },
-
-
-  
-
-
-
-
 };
 </script>
+
+<style lang="scss" scoped>
+.contador{
+  background: greenyellow;
+}
+
+.calendario{
+  background: gray;
+}
+
+.computada{
+  background: orangered;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #fff;
+}
+
+</style>
