@@ -1,7 +1,5 @@
 # https://calendario-vuetify.netlify.app/
 
-# axios-dolar
-
 ## Project setup
 
 ```
