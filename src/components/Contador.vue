@@ -1,9 +1,9 @@
 <template>
-  <div class="container" id="contador">
+  <div class="container-fluid" id="contador">
     <h6>Propiedad Computada</h6>
     <h3>Contador:</h3>
     <h1>{{cantidad}}</h1>
-    <v-btn x-small rounded color="blue" @click="aumentar">Aumentar</v-btn>|
+    <v-btn x-small rounded color="blue" @click="aumentar">Aumentar</v-btn> |
     <v-btn x-small rounded color="error" @click="reducir">Reducir</v-btn>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 #contador {
   font-family: "Courier New", Courier, monospace;
-  border: 2px red solid;
   text-align: center;
+  background: greenyellow;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contador">
     <v-layout :wrap="true">
       <v-flex xs12>
         <v-card>
@@ -18,8 +18,7 @@
       </v-flex>
     </v-layout>
 
-<h4 class="texto">* NO se dispone de datos de los días sábados y domingos</h4>
-
+    <h4 class="texto">* NO se dispone de datos de los días sábados y domingos</h4>
   </div>
 </template>
 
@@ -32,45 +31,46 @@ export default {
       fecha: new Date().toISOString().substr(0, 10),
       minimo: "1984",
       maximo: new Date().toISOString().substr(0, 10),
-      valor: null
+      valor: null,
     };
   },
   methods: {
-    ...mapMutations(['mostrarLoading', 'ocultarLoading']),
+    ...mapMutations(["mostrarLoading", "ocultarLoading"]),
 
     async getDolar(dia) {
       let arrayFecha = dia.split(["-"]);
       let ddmmyy = arrayFecha[2] + "-" + arrayFecha[1] + "-" + arrayFecha[0];
 
       try {
+        this.mostrarLoading({
+          titulo: "Accediendo a información",
+          color: "secondary",
+        });
 
-        this.mostrarLoading({titulo: 'Accediendo a información', color: 'secondary'})
+        let datos = await axios.get(
+          `https://mindicador.cl/api/dolar/${ddmmyy}`
+        );
 
-        let datos = await axios.get(`https://mindicador.cl/api/dolar/${ddmmyy}`)
-
-        if(datos.data.serie.length > 0){
-          this.valor = await datos.data.serie[0].valor
-        }else{
-          this.valor = 'Sin resultados'
+        if (datos.data.serie.length > 0) {
+          this.valor = await datos.data.serie[0].valor;
+        } else {
+          this.valor = "Sin resultados";
         }
-
-        
       } catch (error) {
-        //console.log(error);
       } finally {
-        this.ocultarLoading()
+        this.ocultarLoading();
       }
-    }
+    },
   },
   created() {
     this.getDolar(this.fecha);
-  }
+  },
 };
-
 </script>
 
 <style lang="scss" scoped>
-.texto{
+.texto {
   color: red;
+  text-align: center;
 }
 </style>

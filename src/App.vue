@@ -66,9 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contador{
-  background: greenyellow;
-}
+
 
 .calendario{
   background: gray;
