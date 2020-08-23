@@ -1,9 +1,8 @@
 <template>
   <v-app>
     <div class="contador">
-          <contador></contador>
+      <contador></contador>
     </div>
-
 
     <v-content class="calendario">
       <v-container>
@@ -20,15 +19,10 @@
     </v-content>
 
     <div class="computada">
-   <div class="container">
-      <h3>Hola me llamo: {{ nombre }}</h3>
-      <h3>Mis apellidos son: {{ apellidos }}</h3>
-      <h3>Mi profesión es: {{ profesion }}</h3>
-      <h3>Vivo en la Ciudad de: {{ ciudad }}</h3>
-   </div>
-       
-  
-      
+      <div class="container">
+        <h3>Hecho por: {{ nombre }} {{ apellidos }}</h3>
+        <h3>{{ profesion }} | {{ ciudad }}</h3>
+      </div>
     </div>
   </v-app>
 </template>
@@ -43,7 +37,6 @@ export default {
   components: { Contador },
 
   computed: {
-    // accede al store
     nombre() {
       return this.$store.state.nombre;
     },
@@ -66,16 +59,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-.calendario{
+.calendario {
   background: gray;
 }
 
-.computada{
+.computada {
   background: orangered;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #fff;
+  text-align: left;
 }
-
 </style>

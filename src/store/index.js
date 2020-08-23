@@ -6,12 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
 
-    nombre: 'Pedro Eduardo',
-    apellidos: 'Donoso Ramírez',
+    nombre: 'Pedro',
+    apellidos: 'Donoso',
     profesion: 'Geo Developer',
     ciudad: 'Santiago',
 
-    //contador
     cantidad: 0,
 
     loading: {
@@ -29,9 +28,5 @@ export default new Vuex.Store({
     ocultarLoading(state) {
       state.loading.estado = false
     }
-  },
-  actions: {
-  },
-  modules: {
   }
 })
